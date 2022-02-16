@@ -21,11 +21,12 @@ public class Manager {
             tmp[i] = items[i];
 
         }
-        //    System.arraycopy(items, 0, tmp, 0, items.length);
+        System.arraycopy(items, 0, tmp, 0, items.length);
 
         int lastIndex = tmp.length - 1;
         tmp[lastIndex] = item;
         items = tmp;
+
 
     }
 
