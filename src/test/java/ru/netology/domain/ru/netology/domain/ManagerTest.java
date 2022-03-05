@@ -1,6 +1,7 @@
 package ru.netology.domain.ru.netology.domain;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -20,25 +21,42 @@ class ManagerTest {
     MovieItem ninth = new MovieItem(9, "Nine", "'no' in German(Ordinary german movie)");
     MovieItem tenth = new MovieItem(10, "Who is who", "How to identify an alien(RenTV doc)");
 
+    //    @BeforeAll
+//    public void setUp() {
+//        functions.addMovie(fifth);
+//    }
+
     @Test
     public void addMovieTest() {
 
-    functions.addMovie(first);
-    functions.addMovie(second);
-    functions.addMovie(third);
-    functions.addMovie(fourth);
-    functions.addMovie(fifth);
-    functions.addMovie(sixth);
-    functions.addMovie(seventh);
-    functions.addMovie(eighth);
-    functions.addMovie(ninth);
-    functions.addMovie(tenth);
+        functions.addMovie(first);
+        functions.addMovie(second);
+        functions.addMovie(third);
+        functions.addMovie(fourth);
+        functions.addMovie(fifth);
+        functions.addMovie(sixth);
+        functions.addMovie(seventh);
+        functions.addMovie(eighth);
+        functions.addMovie(ninth);
+        functions.addMovie(tenth);
 
-     MovieItem[] expected = {first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth};
-     MovieItem[] actual = functions.getItems();
+        MovieItem[] expected = {first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth};
+        MovieItem[] actual = functions.getItems();
 
-     assertArrayEquals(expected, actual);
+        assertArrayEquals(expected, actual);
     }
+
+
+    @Test
+    public void shouldDuplicateItemsTest() {
+        functions.addMovie(fifth);
+        functions.addMovie(fifth);
+
+        MovieItem[] expected = functions.getItems();
+        MovieItem[] actual = functions.showAll();
+        assertArrayEquals(expected, actual);
+    }
+
     @Test
 
     public void showAllTest() {
@@ -52,6 +70,7 @@ class ManagerTest {
 
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void showAllTestFirstAndLast() {
 
