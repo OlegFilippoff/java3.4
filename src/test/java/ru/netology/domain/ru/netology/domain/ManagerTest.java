@@ -21,10 +21,6 @@ class ManagerTest {
     MovieItem ninth = new MovieItem(9, "Nine", "'no' in German(Ordinary german movie)");
     MovieItem tenth = new MovieItem(10, "Who is who", "How to identify an alien(RenTV doc)");
 
-    //    @BeforeAll
-//    public void setUp() {
-//        functions.addMovie(fifth);
-//    }
 
     @Test
     public void addMovieTest() {
@@ -63,7 +59,6 @@ class ManagerTest {
 
         functions.addMovie(first);
         functions.addMovie(second);
-        functions.showAll();
 
         MovieItem[] expected = {first, second};
         MovieItem[] actual = functions.showAll();
