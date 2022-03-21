@@ -33,10 +33,8 @@ public class Manager {
         for (int i = 0, j = result.length - 1; i < items.length; i++, j--) {
 
             result[j] = items[i];
-
         }
         items = result;
-
         return items;
     }
 }
