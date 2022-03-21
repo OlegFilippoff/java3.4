@@ -1,12 +1,11 @@
-package ru.netology.domain.ru.netology.domain;
+package ru.netology.manager;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import ru.netology.domain.MovieItem;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ManagerTest {
+public class ManagerTest {
 
     Manager functions = new Manager();
 
