@@ -29,15 +29,29 @@ public class Manager {
 
     public MovieItem[] showAllReverse() {
 
-        MovieItem[] result = new MovieItem[items.length];
+        int resultLength = 0;
+
+        if (resultLength >= 10) {
+            resultLength = 10;
+        } else {
+            resultLength = items.length;
+        }
+
+        MovieItem[] result = new MovieItem[resultLength];
 
         for (int i = 0; i < result.length; i++) {
             int index = items.length - i - 1;
-            result[i] = items[index];
+            if (items[index] != null) {
+                result[i] = items[index];
+            }
+
         }
+
         return result;
     }
+
 }
+
 
 
 
