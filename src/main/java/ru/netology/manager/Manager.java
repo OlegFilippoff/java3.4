@@ -2,15 +2,22 @@ package ru.netology.manager;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
 import ru.netology.domain.MovieItem;
 
-@NoArgsConstructor
+
 @AllArgsConstructor
 @Data
 public class Manager {
     MovieItem[] items = new MovieItem[0];
+    int newItemsLength = 10;
 
+    public Manager(int otherLength) {
+        this.newItemsLength = newItemsLength;
+    }
+
+    public Manager() {
+    }
 
     public void addMovie(MovieItem item) {
 
@@ -29,9 +36,9 @@ public class Manager {
 
     public MovieItem[] showAllReverse() {
 
-        int resultLength = 0;
+        int resultLength = items.length;
 
-        if (resultLength >= 10) {
+        if (resultLength > items.length) {
             resultLength = 10;
         } else {
             resultLength = items.length;
