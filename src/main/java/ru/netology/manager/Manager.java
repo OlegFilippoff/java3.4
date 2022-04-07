@@ -12,7 +12,7 @@ public class Manager {
     MovieItem[] items = new MovieItem[0];
     int newItemsLength = 10;
 
-    public Manager(int otherLength) {
+    public Manager(int newItemsLength) {
         this.newItemsLength = newItemsLength;
     }
 
@@ -37,9 +37,8 @@ public class Manager {
     public MovieItem[] showAllReverse() {
 
         int resultLength = items.length;
-
-        if (resultLength > items.length) {
-            resultLength = 10;
+        if (resultLength > newItemsLength) {
+            resultLength = newItemsLength;
         } else {
             resultLength = items.length;
         }
@@ -48,12 +47,8 @@ public class Manager {
 
         for (int i = 0; i < result.length; i++) {
             int index = items.length - i - 1;
-            if (items[index] != null) {
-                result[i] = items[index];
-            }
-
+            result[i] = items[index];
         }
-
         return result;
     }
 
